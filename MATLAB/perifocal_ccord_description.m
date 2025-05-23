@@ -1,0 +1,30 @@
+close all; clear all; clc;
+
+theta = 0 : pi/36 : 2*pi;
+ver_x = 1.667*cos(theta) - 1.333*ones([1, length(theta)]);
+ver_y = sin(theta);
+coordSize = 0.7;
+width_axis = 3;
+az = -25;
+el = 34;
+xSec = [min(ver_x)-0.1, max(ver_x)+coordSize];
+ySec = [-1.1, 1.1];
+zSec = [-0.1, 0.8];
+
+perifocalCoordFig = figure();
+perifocalCoordFig.Theme = "light";
+perifocalCoordFig.Position = [304, 373, 1256, 865];
+ax = axes(perifocalCoordFig);
+ax.Color = "none";
+ax.XColor = "none";
+ax.YColor = "none";
+ax.ZColor = "none";
+hold on; grid on;
+patch(ver_x, ver_y, "k", "FaceAlpha", 0.3);
+ip = quiver3(0, 0, 0, coordSize, 0, 0, "off", "filled", "LineWidth", width_axis);
+jp = quiver3(0, 0, 0, 0, coordSize, 0, "off", "filled", "LineWidth", width_axis);
+kp = quiver3(0, 0, 0, 0, 0, coordSize, "off", "filled", "LineWidth", width_axis);
+scatter3(0, 0, 0, "k", "filled");
+axis equal;
+xlim(xSec); ylim(ySec); zlim(zSec);
+view([az, el]);
