@@ -20,7 +20,7 @@ ax.XColor = "none";
 ax.YColor = "none";
 ax.ZColor = "none";
 hold on; grid on;
-patch(ver_x, ver_y, "k", "FaceAlpha", 0.3);
+patch(ver_x, ver_y, "k", "FaceAlpha", 0.3, "LineWidth", 5);
 ip = quiver3(0, 0, 0, coordSize, 0, 0, "off", "filled", "LineWidth", width_axis);
 jp = quiver3(0, 0, 0, 0, coordSize, 0, "off", "filled", "LineWidth", width_axis);
 kp = quiver3(0, 0, 0, 0, 0, coordSize, "off", "filled", "LineWidth", width_axis);
